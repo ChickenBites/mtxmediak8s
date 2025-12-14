@@ -1,0 +1,15 @@
+apiVersion: media.example.com/v1alpha1
+kind: StreamSet
+metadata:
+  name: fatbunny
+  namespace: mediamtx
+spec:
+  instanceSize: 4
+  urls:
+    - https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8   # Big Buck Bunny
+    - https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8   # Big Buck Bunny again
+    - https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8   # Big Buck Bunny again
+  mediamtxImage: bluenviron/mediamtx:latest
+  loaderImage: jrottenberg/ffmpeg:5.1-alpine
+  hlsEnabled: true
+ 

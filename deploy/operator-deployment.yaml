@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mediamtx-operator
+  namespace: mediamtx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mediamtx-operator
+  template:
+    metadata:
+      labels:
+        app: mediamtx-operator
+    spec:
+      serviceAccountName: mediamtx-operator
+      containers:
+        - name: operator
+          image: chotomoto/mediamtxk8s:1.1.5
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: OPERATOR_NAMESPACE
+              value: mediamtx
+          workingDir: /app
+      volumes:
+        # If you prefer mounting the src via a ConfigMap, you can replace this
+        # with a proper image build. For local dev, you can also use an initContainer.
+        - name: operator-src
+          emptyDir: {}

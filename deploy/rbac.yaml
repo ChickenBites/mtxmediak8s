@@ -25,7 +25,7 @@ rules:
   resources: ["customresourcedefinitions"]
   verbs: ["get", "list", "watch"]
 
-# Your CRD group
+# CRD group
 - apiGroups: ["media.example.com"]
   resources: ["streamsets"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]

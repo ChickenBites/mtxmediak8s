@@ -17,7 +17,7 @@ def mediamtx_deployment(name, namespace, image="bluenviron/mediamtx:latest"):
                         {
                             "name": "mediamtx",
                             "image": image,
-                            # ✅ Correct command: no --config flag
+                            # Correct command: no --config flag
                             "command": ["mediamtx", "/etc/mediamtx/mediamtx.yml"],
                             "ports": [{"containerPort": 8888, "name": "hls"}],
                             "volumeMounts": [

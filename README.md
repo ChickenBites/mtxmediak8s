@@ -67,4 +67,4 @@ spec:
 
 Cleanup
 
-kubectl -n mediamtx delete sset sports-aggregator
+kubectl -n mediamtx delete sset fatbunny

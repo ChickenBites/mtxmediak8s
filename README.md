@@ -38,7 +38,7 @@ kubectl -n mediamtx get sset,deploy,svc
 
 Access HLS output
 
-kubectl -n mediamtx port-forward svc/sports-aggregator-mtx-0 8888:8888
+kubectl -n mediamtx port-forward svc/fatbunny-mtx-0 8888:8888
 
 
 Then Open: http://localhost:8888/live/stream-0000.m3u8
